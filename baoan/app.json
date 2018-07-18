@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/gov/person/person",
+    
+    "pages/gov/company/company",
+    "pages/gov/mine/mine",
+    "pages/gov/network/network",
+      "pages/index/index",
+      "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "white",
+    "navigationBarBackgroundColor": "#00a9e9",
+    "navigationBarTitleText": "我的政务app",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#00a9e9",
+    "list": [
+      {
+        "pagePath": "pages/gov/person/person",
+        "text": "个人办事",
+        "iconPath": "pages/res/pic/person.png",
+        "selectedIconPath": "pages/res/pic/person-hover.png"
+      },
+      {
+        "pagePath": "pages/gov/company/company",
+        "text": "企业办事",
+        "iconPath": "pages/res/pic/company.png",
+        "selectedIconPath": "pages/res/pic/company-hover.png"
+      },
+      {
+        "pagePath": "pages/gov/network/network",
+        "text": "服务网点",
+        "iconPath": "pages/res/pic/network.png",
+        "selectedIconPath": "pages/res/pic/network-hover.png"
+      },
+      {
+        "pagePath": "pages/gov/mine/mine",
+        "text": "我的",
+        "iconPath": "pages/res/pic/mine.png",
+        "selectedIconPath": "pages/res/pic/mine-hover.png"
+      }
+    ]
+  }
+}

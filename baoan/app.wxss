@@ -1,0 +1,55 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.pd-20 {
+  padding: 10 !important;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pdl-10 {
+  padding-left: 10px;
+}
+
+.bg-white {
+  background: white !important;
+}
+
+.v-centeral {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+}
+
+.icon-search {
+  background: url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/search.png) no-repeat center;
+  background-size: 80%;
+  width: 2em;
+  height: 2em;
+}
+.textcenter{
+  color: gray;
+  margin-left: 2em;
+}
+.bg-search {
+  height: 2.5em;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  background: white;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  margin: 5px;
+}

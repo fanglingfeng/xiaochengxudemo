@@ -1,0 +1,23 @@
+<!--pages/gov/person/person.wxml-->
+<view class='pd-20 bg-white'>
+  <form>
+    <div class='bg-search'>
+      <div class='pull-left pdl-10'>
+        <span class='v-centeral icon-search'></span>
+      </div>
+      <div class='pull-left pdl-10' >
+        <span class='v-centeral' >
+          <text class='textcenter' >搜索</text>
+        </span>
+      </div>
+
+
+    </div>
+
+
+
+  </form>
+
+
+
+</view>
