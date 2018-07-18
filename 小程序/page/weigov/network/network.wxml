@@ -1,0 +1,45 @@
+<view class="page link-list">
+
+    <view class="list-hd">
+        <strong class="hd-name">区级行政服务中心</strong>
+    </view>
+    <div class="weui-cells my-talk-list">
+        <navigator wx:for="{{list1}}" class="weui-cell weui-cell_access" url="../networkAddressDetail/networkAddressDetail?id={{item.NETWORKID}}&type=main">
+            <div class="weui-cell__bd">
+                <span ng-bind="item.NETWORKNAME"><text>{{item.NETWORKNAME}}</text></span>
+                <p class="pd-10"></p>
+                <p class="text-gray" ng-bind="item.NETWORKPHONE">{{item.NETWORKPHONE}}</p>
+                <p class="pd-10"></p>
+                <p class="text-gray" ng-bind="item.NETWORKADDRESS">{{item.NETWORKADDRESS}}</p>
+
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+    </div>
+
+    <view class="list-hd">
+        <strong class="hd-name">街道行政服务中心</strong>
+    </view>
+    <div class="weui-cells my-talk-list">
+        <navigator wx:for="{{list2}}" class="weui-cell weui-cell_access" url="../networkAddressDetail/networkAddressDetail?id={{item.NETWORKID}}&type=sub">
+            <div class="weui-cell__bd">
+                <span ng-bind="item.NETWORKNAME"><text>{{item.NETWORKNAME}}</text></span>
+                <p class="pd-10"></p>
+                <p class="text-gray" ng-bind="item.NETWORKPHONE">{{item.NETWORKPHONE}}</p>
+                <p class="pd-10"></p>
+                <p class="text-gray" ng-bind="item.NETWORKADDRESS">{{item.NETWORKADDRESS}}</p>
+
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+    </div>
+
+    <modal class="modal" hidden="{{!isShowError}}" no-cancel bindconfirm="hideShowError" bindcancel="hideShowError">
+        <view> 未加载到数据,请稍后重试 </view>
+    </modal>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
+

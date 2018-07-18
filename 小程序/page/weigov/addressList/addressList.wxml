@@ -1,0 +1,29 @@
+<import src="../../../common/dialogs.wxml"></import>
+<template is="dialogs" data="{{...dialogs}}"/>
+<view class="page">
+
+    <div class="pd-40 bg-white mgb-20" wx:for="{{list}}">
+        <div class="position-item pdb-10">
+            <div class="ft-s-12">收货人：{{item.RECEIVE}}  <span class="pull-right">{{item.MOBILE}}</span></div>
+            <div class="mgt-10"><span class="ion-ios-location-outline  mgr-10"></span>收货地址：{{item.ADDRESS}}</div>
+        </div>
+        <div class="pdt-10">
+            <span class="text-white">. </span>
+            <div class="pull-right text-gray">
+                <span data-id="{{item.POSTID}}" bindtap="addAddress"><span class="ion-ios-paper-outline mgr-10"></span>修改</span>
+                <span data-id="{{item.POSTID}}" bindtap="del" class="mgl-20"><span class="ion-ios-trash-outline mgr-10"></span>删除</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pd-40 bg-white mgt-20">
+        <a bindtap="addAddress" class="action weui-btn weui-btn_primary bg-blue">添加</a>
+    </div>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        {{loadingText}}
+    </loading>
+
+</view>
+

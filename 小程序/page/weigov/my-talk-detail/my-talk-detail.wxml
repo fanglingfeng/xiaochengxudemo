@@ -1,0 +1,33 @@
+<view class="page bg-white">
+
+    <section class="pd-40" wx:for="{{list}}" wx:for-item="it">
+
+        <p class="text-title">
+            <span wx:if="{{it.SXMC}}">{{it.SXMC}}</span>
+            <span wx:else ng-bind="it.MAINTITLE">{{it.MAINTITLE}}</span>
+            <span class="text-gray mgl-40" ng-bind="it.CREATETIME">{{it.CREATETIME}}</span>
+        </p>
+        <div class="talk-from">
+            <span class="arrow-up"></span>
+            <span ng-bind="it.CONTENT">{{it.CONTENT}}</span>
+        </div>
+
+        <div class="clear pd-40"></div>
+
+        <div wx:if="{{it.HFNR!=null}}" class="talk-to">
+            <span class="arrow-down"></span>
+            <span  ng-bind="it.HFNR">{{it.HFNR}}</span>
+        </div>
+        <div class="clear"></div>
+        <p class="text-blue text-right" wx:if="{{it.HFNR!=null}}">
+            <span class="text-gray mgr-40" ng-bind="it.MODIFYTIME">{{it.MODIFYTIME}}</span>
+            <span ng-bind="it.DEPARTMENTNAME">{{it.DEPARTMENTNAME}}</span>
+        </p>
+
+    </section>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

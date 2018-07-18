@@ -1,0 +1,39 @@
+<view class="page bg-white">
+
+
+    <div class="weui-cells mgt-5 my-talk-list" id="hide1">
+
+        <navigator wx:for="{{list}}" wx:if='{{item.CODE3<=756}}' url="../item-detail/item-detail?ID={{item.ID}}" hover-class="navigator-hover" class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <p ng-bind="item.SXZXNAME">{{item.SXZXNAME}}</p>
+                <p class="pd-10"></p>
+                <p class="text-black ft-s-8">事项编码：<span ng-bind="item.CODE3">{{item.CODE3}}</span><span wx:if='{{item.CODE4!=""}}'>(<span ng-bind="item.CODE4">{{item.CODE4}}</span>)</span> <span class="text-gray mgl-10" ng-bind="item.DEPTNAME">{{item.DEPTNAME}}</span></p>
+                <p class=""></p>
+                <span class="state-collect state-apply ft-s-6">可申报</span>
+                <span class="state-collect state-order ft-s-6">可预约</span>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+
+
+
+        <div class="bg-blue text-center text-white pd-10" bindtap="findMore" wx:if="{{showMore}}">加载更多</div>
+    </div>
+
+
+    <div class="bg-white" wx:if="{{noData}}">
+        <div class="page__hd pd-40">
+        </div>
+        <div class="page__bd">
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips bg-white">暂无数据</span>
+            </div>
+        </div>
+    </div>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

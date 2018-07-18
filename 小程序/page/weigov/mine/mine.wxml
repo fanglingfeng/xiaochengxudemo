@@ -1,0 +1,47 @@
+<view class="page" style="font-size:28rpx;">
+
+    <div class="weui-cells big-margin my-talk-list ">
+        <navigator url="../query-progress/query-progress" class="weui-cell weui-cell_access" hover-class="navigator-hover">
+            <div class="weui-cell__hd mgr-20"><image  id="i1" src="/image/mine/tj_ic_main_jdcx.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>进度查询</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+    </div>
+
+    <div class="weui-cells mgt-30 big-margin my-talk-list ">
+        <navigator url="../my-apply/my-apply" class="weui-cell weui-cell_access" hover-class="navigator-hover">
+            <div class="weui-cell__hd mgr-20"><image id="i2" src="/image/mine/tj_ic_main_wdsb.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>我的申报</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+
+        <navigator url="../my-order/my-order" class="weui-cell weui-cell_access" hover-class="navigator-hover">
+            <div class="weui-cell__hd mgr-20"><image id="i3" src="/image/mine/tj_ic_main_wdyy.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>我的预约</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+
+
+        <navigator url="../my-collect/my-collect" class="weui-cell weui-cell_access" hover-class="navigator-hover">
+            <div class="weui-cell__hd mgr-20"><image id="i4" src="/image/mine/tj_ic_main_wdsc.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>我的收藏</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+        <navigator url="../my-talk/my-talk" class="weui-cell weui-cell_access" hover-class="navigator-hover">
+            <div class="weui-cell__hd mgr-20"><image id="i5" src="/image/mine/tj_ic_main_zxts.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>我的咨询</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+    </div>
+
+</view>

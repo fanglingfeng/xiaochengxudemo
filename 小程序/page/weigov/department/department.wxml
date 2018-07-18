@@ -1,0 +1,26 @@
+<view class="page">
+
+    <view >
+        <section class="bg-white link-list">
+            <div class="weui-cells my-talk-list">
+                <navigator wx:if="{{item.PERMNUM!=0}}" class="weui-cell weui-cell_access" wx:for="{{data.ReturnValue}}" url="../sub-item-list/sub-item-list?itemType=department&PICTURECODE={{item.PICTURECODE}}&DEPTID={{item.DEPTID}}" hover-class="navigator-hover">
+                    <div class="weui-cell__bd">
+                        <span ng-bind="item.SHORTNAME">{{item.SHORTNAME}}</span>  (<span ng-bind="item.PERMNUM">{{item.PERMNUM}}</span>)
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </navigator>
+            </div>
+            <div class="part-wrap clearfix">
+            </div>
+        </section>
+    </view>
+
+    <modal class="modal" hidden="{{!isShowError}}" no-cancel bindconfirm="hideShowError" bindcancel="hideShowError">
+        <view> 未加载到数据,请稍后重试 </view>
+    </modal>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
+

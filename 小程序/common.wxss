@@ -1,0 +1,494 @@
+
+.page {box-sizing:border-box;font-family:'microsoft yahei',arial,"Helvetica Neue","Roboto","Segoe UI",sans-serif;color:inherit;}
+
+/*基础*/
+.text-bold{font-weight:bold!important;}
+.text-gray,.text-extra{color:#999!important;}
+.text-default{color:#666!important;}
+.text-content{color:#4d4d4d!important;}
+.text-title{color:#323232!important;}
+.text-red{color:#f14d4e!important;}
+.text-blue{color:#00a9e9!important;}
+.text-green{color:#55ba1b!important;}
+.text-black{color:#000!important;}
+.text-waring{color:#fd6000!important;}
+.text-white{color:#fff!important;}
+
+.text-normal {font-weight:normal !important;}
+
+.bg-default {background-color:#f8f8f8!important;}
+.bg-gray{background-color:#f1f1f1!important;}
+.bg-white{background-color:#fff!important;}
+.bg-green{background-color:#55ba1b!important;}
+.bg-red{background-color:#ff211e!important;}
+.bg-blue{background-color:#00a9e9!important;}
+.bg-light-blue{background-color:#daf4fc!important;}
+.bg-orange {background-color:#fd6200!important;}
+.pd-20{padding:.2em;}
+.mb-20{margin-bottom:.2em;}
+.mt-20{margin-top:.2em;}
+.ml-20{margin-left:.2em;}
+.pull-left{float:left;}
+.pull-right{float:right;}
+.text-left{text-align:left;}
+.text-center{text-align:center;}
+.text-right{text-align:right;}
+.nowrap{white-space:nowrap;}
+.break-word{word-break:break-all;}
+.clear {clear:both;}
+
+.ft-s-8 {font-size:.8em !important;}
+.ft-s-7 {font-size:.7em !important;}
+.ft-s-6 {font-size:.6em !important;}
+.ft-s-5 {font-size:.5em !important;}
+
+.relative {position:relative !important;}
+.absolute {position:absolute !important;}
+
+.no-bd {border:none !important;}
+.block {display:block;}
+.clear {clear:both;}
+
+section,div,p {display:block;}
+textarea {border:1px solid #dcdcdc;width:100%;min-height:6em;height:10em;padding:.2em;font-size:1.2em;line-height:1.5;box-sizing:border-box;
+}
+select {width:100%;font-size:1.2em;line-height:1.5;border-color:#dcdcdc;padding: 10px 15px;background-color:#fff;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.required {position:relative;}
+.required::after {content:"*";position:absolute;right:-.5em;color:red;}
+
+.input-text {position:relative;}
+.input-text .text {font-size:1.2em;padding-left:.8em;width:5em;display:block;text-align:justify;text-align-last: justify;}
+.input-text input,.input-text select {padding-left:7em;}
+.input-text .area-text {position:absolute;top:.2em;left:0;}
+.input-text textarea {text-indent:6em;padding-top:2em;box-sizing:border-box;}
+
+.input-group-flex {display:flex;justify-content:space-between;align-item:center;border-bottom:1px solid #ededed;padding:5px 0;}
+.input-group-flex .text {width:6em;text-align:justify;text-align-last:justify;font-size:1em;}
+.input-group-flex .input {padding:0 .5em;background:none;border:none;font-size:1em;}
+.input-group-flex .input:focus {outline:none;}
+
+.input-hd {padding:5px 0;}
+.input-hd .text {float:left;width:5em;text-align:justify;text-align-last:justify;padding:10px 0;font-size:1.2em;}
+.input-hd .input-group {margin-left:7em;}
+
+.input-title {font-size:1.2em;padding:10px 0;}
+
+.select{-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+
+/*图片*/
+.img-apply {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/network/tj_icon_wysb.png') !important;}
+.img-order {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/network/tj_icon_wyyy.png') !important;}
+.img-guide {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/network/tj_icon_bszn.png') !important;}
+.img-tel {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/network/tj_icon_rxdh.png') !important;}
+.img-kefu {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/network/tj_icon_zxkf.png') !important;}
+
+/*小米上不显示*/
+.bar-calm.sub-head .ion-android-arrow-back{color:#f14d4e;}
+.has-header{top:.96em;}
+.scroll-bar-indicator{display:none;}
+.bar .button.button-icon .icon:before,.bar .button.button-icon.icon-left:before,.bar .button.button-icon.icon-right:before,.bar .button.button-icon:before,.bar button.button-icon .icon:before,.bar button.button-icon.icon-left:before,.bar button.button-icon.icon-right:before,.bar button.button-icon:before{line-height:.74em;}
+.swiper-pagination-bullet-active{background-color:#f14d4e;}
+.img-soft{display:inline-block;}
+.img-soft img{height:5em;}
+
+/*全局*/
+
+/*点击效果*/
+.click-active:active{opacity:.7;}
+/*点击效果*/
+
+.pd-5{padding:2.5px!important;}
+.pdr-5{padding-right:2.5px!important;}
+.pdl-5{padding-left:2.5px!important;}
+.pdt-5{padding-top:2.5px!important;}
+.pdb-5{padding-bottom:2.5px!important;}
+.mg-5{margin:2.5px!important;}
+.mgr-5{margin-right:2.5px!important;}
+.mgl-5{margin-left:2.5px!important;}
+.mgt-5{margin-top:2.5px!important;}
+.mgb-5{margin-bottom:2.5px!important;}
+.pd-10{padding:5px!important;}
+.pdr-10{padding-right:5px!important;}
+.pdl-10{padding-left:5px!important;}
+.pdt-10{padding-top:5px!important;}
+.pdb-10{padding-bottom:5px!important;}
+.mg-10{margin:5px!important;}
+.mgr-10{margin-right:5px!important;}
+.mgl-10{margin-left:5px!important;}
+.mgt-10{margin-top:5px!important;}
+.mgb-10{margin-bottom:5px!important;}
+.pd-15{padding:7.5px!important;}
+.pdr-15{padding-right:7.5px!important;}
+.pdl-15{padding-left:7.5px!important;}
+.pdt-15{padding-top:7.5px!important;}
+.pdb-15{padding-bottom:7.5px!important;}
+.mg-15{margin:7.5px!important;}
+.mgr-15{margin-right:7.5px!important;}
+.mgl-15{margin-left:7.5px!important;}
+.mgt-15{margin-top:7.5px!important;}
+.mgb-15{margin-bottom:7.5px!important;}
+.pd-20{padding:10px!important;}
+.pdr-20{padding-right:10px!important;}
+.pdl-20{padding-left:10px!important;}
+.pdt-20{padding-top:10px!important;}
+.pdb-20{padding-bottom:10px!important;}
+.mg-20{margin:10px!important;}
+.mgr-20{margin-right:10px!important;}
+.mgl-20{margin-left:10px!important;}
+.mgt-20{margin-top:10px!important;}
+.mgb-20{margin-bottom:10px!important;}
+.pd-25{padding:12.5px!important;}
+.pdr-25{padding-right:12.5px!important;}
+.pdl-25{padding-left:12.5px!important;}
+.pdt-25{padding-top:12.5px!important;}
+.pdb-25{padding-bottom:12.5px!important;}
+.mg-25{margin:12.5px!important;}
+.mgr-25{margin-right:12.5px!important;}
+.mgl-25{margin-left:12.5px!important;}
+.mgt-25{margin-top:12.5px!important;}
+.mgb-25{margin-bottom:12.5px!important;}
+.pd-30{padding:15px!important;}
+.pdr-30{padding-right:15px!important;}
+.pdl-30{padding-left:15px!important;}
+.pdt-30{padding-top:15px!important;}
+.pdb-30{padding-bottom:15px!important;}
+.mg-30{margin:15px!important;}
+.mgr-30{margin-right:15px!important;}
+.mgl-30{margin-left:15px!important;}
+.mgt-30{margin-top:15px!important;}
+.mgb-30{margin-bottom:15px!important;}
+.pd-35{padding:17.5px!important;}
+.pdr-35{padding-right:17.5px!important;}
+.pdl-35{padding-left:17.5px!important;}
+.pdt-35{padding-top:17.5px!important;}
+.pdb-35{padding-bottom:17.5px!important;}
+.mg-35{margin:17.5px!important;}
+.mgr-35{margin-right:17.5px!important;}
+.mgl-35{margin-left:17.5px!important;}
+.mgt-35{margin-top:17.5px!important;}
+.mgb-35{margin-bottom:17.5px!important;}
+.pd-40{padding:20px!important;}
+.pdr-40{padding-right:20px!important;}
+.pdl-40{padding-left:20px!important;}
+.pdt-40{padding-top:20px!important;}
+.pdb-40{padding-bottom:20px!important;}
+.mg-40{margin:20px!important;}
+.mgr-40{margin-right:20px!important;}
+.mgl-40{margin-left:20px!important;}
+.mgt-40{margin-top:20px!important;}
+.mgb-40{margin-bottom:20px!important;}
+.pd-45{padding:22.5px!important;}
+.pdr-45{padding-right:22.5px!important;}
+.pdl-45{padding-left:22.5px!important;}
+.pdt-45{padding-top:22.5px!important;}
+.pdb-45{padding-bottom:22.5px!important;}
+.mg-45{margin:22.5px!important;}
+.mgr-45{margin-right:22.5px!important;}
+.mgl-45{margin-left:22.5px!important;}
+.mgt-45{margin-top:22.5px!important;}
+.mgb-45{margin-bottom:22.5px!important;}
+.pd-50{padding:25px!important;}
+.pdr-50{padding-right:25px!important;}
+.pdl-50{padding-left:25px!important;}
+.pdt-50{padding-top:25px!important;}
+.pdb-50{padding-bottom:25px!important;}
+.mg-50{margin:25px!important;}
+.mgr-50{margin-right:25px!important;}
+.mgl-50{margin-left:25px!important;}
+.mgt-50{margin-top:25px!important;}
+.mgb-50{margin-bottom:25px!important;}
+input::-webkit-input-placeholder{color:#999;}
+input {width:100%;border:1px solid #dcdcdc;padding:11px 15px;font-size:1.2em;}
+html,body{padding:0;margin:0;height:100%;background-color:#f8f8f8;box-sizing:border-box;color:#140000;moz-user-select: -moz-none;-moz-user-select: none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;}
+body {font-size:14px;}
+.show{display:block!important;}
+.hide{display:none!important;}
+.show.hide{display:block!important;}
+.line{border-top:1px solid #cccccc;height:0;}
+.title-icon{position:relative;}
+.title-icon::before{position:absolute;content:"";display:block;height:1.2em;left:0;border-left:0.5em solid #1885d3;top:50%;-webkit-transform:translate3d(0,-50%,0);}
+.icon-img {width:80%;height:80%;}
+.icon-img.right {right:0;}
+.icon-img.left {left:0;}
+
+.clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+
+.v-center{position:absolute;top:50%;-webkit-transform:translateY(-50%);}
+.footer-fixed {position:fixed;z-index:10;left:0;bottom:0;right:0;background:#fff;box-shadow:0 -2px 5px #dcdcdc;}
+.has-footer {margin-bottom:100px !important;}
+.foot-actions {display:flex;justify-content:space-between;}
+.foot-actions .action {margin: 0 3px;background-color:#fff;border:1px solid #00a9e9;color:#00a9e9;flex:1;}
+.foot-actions .action:active {background-color:#00a9e9;}
+
+.has-footer.scroll-content {height:calc(100vh - 100px - 70px);overflow-y:scroll;}
+
+.link-line-wrap {margin-bottom:10px;}
+.link-line {text-decoration:underline;}
+.text-scroll {max-height:15em;overflow-y:auto;line-height:1.8;}
+.flex {display:flex;display:-webkit-flex;justify-content: space-between;}
+
+.my-talk-list .hover .weui-cell__ft {transform:rotate(90deg);-webkit-transform:rotate(90deg);}
+.visibility {visibility:hidden;}
+
+.input-group input {width:auto;height:1.2em;min-height:1em;}
+
+/*weui*/
+.weui-btn {line-height:2;}
+/*.weui-actionsheet__cell {font-size:1.1em;}*/
+/*办事指南*/
+.menu-list .nav-menu{min-width:6em;height:100%;position:fixed;left:0;top:0;box-shadow:0 3px 5px #7e7e7e;background-color:#fff;z-index:9;}
+.menu-list .nav-menu .title{text-align:center;height:0.8em;line-height:0.8em;border-bottom:1px solid #cccccc;}
+.menu-list .nav-menu .title:hover,.menu-list .nav-menu .title.hover{color:#fff;background-color:#1885d3;}
+.menu-list .nav-list{margin-left:6em;background-color:#fff;}
+.menu-list .nav-list .item{padding-right:.2em;position:relative;}
+.menu-list .nav-list .item .v-center{right:.2em;color:#cccccc;}
+.m-weui-tab{padding-left:0;padding-right:0;padding-bottom:0;}
+.m-weui-tab .weui-form-preview__item{overflow:auto;}
+.m-weui-tab::after{left:0;border:none;}
+.m-weui-tab .weui-form-preview__label{margin-right:0;width:25%;min-width:unset;text-align:center;text-align-last:center;position:relative;padding-bottom:10px;color:#000;}
+.m-weui-tab .weui-form-preview__label::after{content:" ";position:absolute;left:0;bottom:0;right:0;height:1px;border-bottom:1px solid #D9D9D9;color:#D9D9D9;-webkit-transform-origin:0 100%;transform-origin:0 100%;-webkit-transform:scaleY(0.5);transform:scaleY(0.5);left:0;}
+.m-weui-tab .weui-form-preview__label.hover,.m-weui-tab .weui-form-preview__label:hover,.m-weui-tab .weui-form-preview__label:active{color:#1885d3;}
+.m-weui-tab .weui-form-preview__label.hover::after,.m-weui-tab .weui-form-preview__label:hover::after,.m-weui-tab .weui-form-preview__label:active::after{border-color:#1885d3;z-index:3;}
+
+/*新闻*/
+.news-list .item{padding:.2em;overflow:hidden;}
+.news-list .item .img{width:25%;height:4.5em;margin-right:1em;overflow:hidden;float:left;}
+.news-list .item .img img{width:100%;height:100%;vertical-align:middle;}
+.news-list .item .text-title{display:-webkit-box;line-height:1.5;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+.news-list .item:active{background-color:#f1f1f1;}
+.news-detail{height:100%;}
+.news-detail .title{color:#1885d3;font-size:1.2em;text-align:center;}
+.news-detail .content img{max-width:100%;}
+#container{height:100%;}
+#container  div{height:100%;}
+#list{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;overflow-y:scroll;}
+#detail{height:100%;width:100%;position:absolute;z-index:999;left:0;top:0;background-color:#f1f1f1;display:none;overflow-y:scroll;}
+.load-more{height:0.8em;line-height:0.8em;width:100%;background-color:rgba(24,133,211,0.6);color:#fff;text-align:center;font-size:1.2em;}
+.load-more.disable{background-color:#7e7e7e;}
+.click:active,.click:hover{background-color:#f1f1f1;}
+.weui-loadmore_line .weui-loadmore__tips{background-color:#f1f1f1;}
+
+
+/*我的预约*/
+.text-list {}
+.text-list .state {position:absolute;right:5px;width:50px;height:62px;top:-5px;background:url("") no-repeat center;background-size:100% 100%;}
+.text-list .state .state-text {color:#fff;font-size:1em;line-height: 1;width:2em;text-align:center;margin: auto;position: relative;box-sizing: border-box;transform: translateY(-70%);top: 50%;-webkit-transform: translateY(-70%);top: 50%;}
+.text-list .state.state-success {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/order-success.png');}
+.text-list .state.state-failed {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/order-failed.png');}
+.text-list .text-item {border:1px solid #dcdcdc;position:relative;}
+.text-list .text-item .hd,.text-list .text-item .bd {display:block;}
+.text-list .text-item .hd {width:6em;float:left;}
+.text-list .text-item .bd {margin-left:6.5em;white-space:normal;word-break: break-all;}
+
+/*完善个人信息*/
+.tab-wrap {overflow:hidden;border-radius:5px;border:1px solid #00a9e9;background-color:#00a9e9;}
+.tab-wrap .hd {color:#00a9e9;background-color:#fff;border-radius:5px;display:inline-block;width:50%;text-align:center;font-size:1.5em;padding:5px;box-sizing:border-box;}
+.tab-wrap .hd.hover {background-color:#00a9e9;color:#fff;}
+.verify-wrap {display:flex;}
+.verify-wrap .input-group {flex:1;}
+.verify-wrap .btn {width:40%;display:inline-block;padding-left:1em;min-width:10em;}
+.verify-wrap .btn .weui-btn {line-height:1.2;padding:11px 0;}
+.line-m {border-bottom:1px solid #dcdcdc;margin:20px -.4em;}
+.line-m-pure {border-bottom:1px solid #dcdcdc;}
+
+.verify-wrap .search-btn {width:30%;display:inline-block;padding-left:1em;min-width:3em;}
+
+.avatar {margin:30px auto 0;width:6em;heigt:6em;overflow:hidden;border-radius:100%;}
+.avatar img {width:100%;height:100%;}
+
+/*我的咨询*/
+.my-talk-list .weui-cell {padding:16px 15px; }
+.my-talk-list.big-margin .weui-cell {padding: 1em 15px;}
+.state-reply {border-radius:3px;width:5em;text-align:center;display:inline-block;padding:5px 0;}
+.state-reply {margin-left:10px;}
+
+.talk-from,.talk-to {position:relative;padding:10px;border-radius:3px;display:inline-block;}
+.talk-from::after,.talk-to::after {content:"";display:block;clear:both;}
+.talk-from {border:1px solid #dcdcdc;background-color:#fff;margin-top:10px;}
+.talk-to {margin-bottom:10px;background-color:#00a9e9;float:right;color:#fff;}
+
+.arrow-up,.arrow-down {display:block;position:absolute;width:10px;height:10px;transform:rotate(45deg);-webkit-transform:rotate(45deg);}
+.arrow-up {left:10px;top:-5px;border:1px solid #dcdcdc;border-color:#dcdcdc transparent transparent #dcdcdc;background-color:#fff;}
+.arrow-down {right:10px;bottom:-5px;background-color:#00a9e9}
+
+.link-list .weui-cells {font-size:1em;}
+.body-f-size {font-size:0.8em;}
+/*我的收藏*/
+.my-talk-list {margin-top:0;}
+.weui-cells{font-size:1.2em;}
+.state-collect {border-radius:40px;display:inline-block;width:6em;text-align:center;padding:1px 0;}
+.state-collect + .state-collect {margin-left:10px;}
+.state-apply {color:#77d400;border:1px solid #77d400;}
+.state-order {color:#00a9e9;border:1px solid #00a9e9;}
+
+.list-hd {padding:.5em .4em;color:#333;font-size:1.1em;font-weight:normal;display:block;}
+
+.list-hd .hd-name {border-left:4px solid #00a9e9;padding-left:10px;line-height:1.5;}
+
+.big-icon {position:relative;vertical-align:middle;top:0px;}
+.big-icon::before {content:"";display:inline-block;width:1.5em;}
+.big-icon i {position:absolute;left:0em;top:50%;font-size:1.5em;transform:translateY(-50%);-webkit-transform:translateY(-50%);width:100%;height:100%;display:block;}
+.big-icon i .icon-img {vertical-align:top;}
+
+.item-actions {display:flex;justify-content:space-around;background:#f8f8f8;font-size:.8em;}
+.item-actions .item-action {width:2em;text-align:center;padding:10px 0;}
+.item-actions .item-action .img {width:2em;height:2em;background: no-repeat center;background-size:80%;}
+
+
+.search-icon {background:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/search.png) no-repeat center;background-size:80%;display:block;width:1em;height:1em;}
+
+/*进度查询*/
+.search-wrap .search-input{border:1px solid #dcdcdc;background:#fff;position:relative;overflow:hidden;box-sizing:border-box;}
+.search-wrap .search-input .inp-wrap{display:block;margin:0 0.8em 0 0;}
+.search-wrap .search-input .inp-wrap input{width:auto;margin-right:1.2em;border:none;outline:none;padding:.3em 5px;}
+.search-wrap .search-input .btn-search{width:0.8em;text-align:center;}
+.search-wrap .search-input .btn-search .ion-search{color:#00a9e9;font-size:2em;}
+.search-wrap .search-input .btn-camera{width:0.8em;text-align:center;}
+.search-wrap .search-input .btn-camera .ion-qr-scanner{color:#00a9e9;font-size:1.6em;right:5px;}
+.search-wrap .search-input .btn-camera .ion-ios-search{color:#00a9e9;font-size:2em;}
+.search-wrap .search-input .btn-camera .ion-ios-close{color:#7e7e7e;font-size:1.6em;background-image:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/close.png);right:0;}
+.search-wrap .search-input .btn-camera .ion-qr-scanner{color:#7e7e7e;font-size:1.6em;background-image:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/scan.png);}
+.search-wrap .search-input .btn-camera span{color:#7e7e7e;font-size:1.6em;}
+.search-wrap .search-input .btn-camera .ion-ios-mic {background-image:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/mic.png.no);right:0;}
+
+/*事项搜索*/
+.search-wrap .search-input .inp-wrap .thing-input{width:auto;margin-right:1.2em;border:none;outline:none;padding:.3em 0;font-size:1em;}
+.search-audio-wrap {position:relative;height:2.5em;}
+.search-audio-wrap .search-input {flex:1;border-radius:5px;}
+.search-audio-wrap .search-input .inp-wrap {flex:1;margin:0 2em;line-height:2.5;padding-left:.3em;color:gray;}
+.search-audio-wrap .search-input .ion-ios-search {font-size:2em;color:#dcdcdc;}
+.search-audio-wrap .search-btns {width:3em;overflow:hidden;position:relative;}
+.search-audio-wrap .btn-search {width:3em;text-align:center;color:#00a9e9;}
+.search-audio-wrap .btn-search .ion-ios-mic {font-size:2em;background-image:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/mic-hover.png);float:right;width:1.2em;height:1.2em;}
+
+
+/*进度详情*/
+.step-wrap {display:flex;align-items:center;}
+.step-btn {position:relative;width:6em;color:#fff;height:3em;line-height:3em;border-radius:3px;text-align:center;}
+.step-time {flex:1;position:relative;padding:10px;border-radius:5px;color:#666;margin-left:15px;}
+.step-time::after {content:"";display:block;width:10px;height:10px;position:absolute;top:50%;left:-5px;transform:translateY(-50%) rotate(45deg);-webkit-transform:translateY(-50%) rotate(45deg);background-color:inherit;}
+.step-done-wrap {width:6em;}
+.step-done {display:inline-block;background:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/step-done.png') no-repeat center;width:14px;height:42px;background-size:100%;}
+.step-done .img {height:42px;width:14px;}
+.step-doing {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/step-doing.png');}
+
+/*办事流程*/
+.rout-item {width:303px;margin:auto;padding-top:20px;}
+.rout-item .rout {float:left;width:150px;height:61px;background:url('') no-repeat center;background-size:100%;}
+.rout.rout-r {padding-left:35px;background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/rout-r.png');position:relative;left:-9px;}
+.rout.rout-r strong {margin:11px 0 0 33px;display:block;}
+.rout.rout-r p {text-align:center;}
+.rout p {padding-top:2px;}
+.rout.rout-l {padding-right:35px;background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/rout-l.png');position:relative;right:-9px;z-index:1;}
+.rout.rout-l strong {display:block;margin:11px 31px 0 auto;text-align:right;}
+.rout.rout-l p {text-align:center;}
+.rout.rout-r-hover {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/rout-r-hover.png');color:#fff;left:-6px;}
+.rout.rout-l-hover {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/rout-l-hover.png');color:#fff;}
+.rout.rout-l-hover ,.rout.rout-r-hover {color:inherit;}
+
+
+.rout-line {height:75px;width:3px;background:#ccc;position:relative;margin-top:-28px;float:left;}
+
+
+/*选择办理事项*/
+.tab-hd {list-style:none;}
+.tab-hd li {float:left;padding:10px 0;text-align:center;font-size:1.1em;line-height:1.2;width:50%;}
+.tab-hd li.hover {color:#00a9e9;border-bottom:3px solid #00a9e9;}
+.theme-wrap ul {list-style:none;}
+.theme-wrap li {float:left;width:50%;padding:5px 5px;border:1px solid #dcdcdc;border-width:0 1px 1px 0;display:flex;align-items:center;}
+.theme-wrap li:nth-child(2n) {border-right:none;}
+.theme-wrap li:nth-child(1),.theme-wrap li:nth-child(2) {border-top-width:1px;}
+.theme-wrap li i {display:block;width:35%;height:22px;float:left;text-align:right;margin-right:10px;}
+.theme-wrap li i img {height:100%;width:auto;}
+.theme-wrap li h4 {font-weight:normal;font-size:1.2em;}
+
+.theme-wrap-s li i {height:22px;}
+
+.tab-hd .li {float:left;padding:10px 0;text-align:center;font-size:1.1em;line-height:1.2;width:50%;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.tab-hd .li.hover {color:#00a9e9;border-bottom:3px solid #00a9e9;}
+.theme-wrap .li {float:left;width:50%;padding:12px 5px;border:1px solid #dcdcdc;border-width:0 1px 1px 0;display:flex;align-items:center;-webkit-box-sizing:border-box;}
+.theme-wrap .li:nth-child(2n) {border-right:none;}
+.theme-wrap .li:nth-child(1),.theme-wrap .li:nth-child(2) {border-top-width:1px;}
+.theme-wrap .li .i {display:block;width:30%;height:22px;float:left;text-align:right;margin-right:15px;}
+.theme-wrap .li .i .img {height:22px;width:22px;}
+.theme-wrap .li .h4 {font-weight:normal;font-size:1.2em;}
+
+.theme-wrap-s li i {height:22px;}
+
+
+.btn-wrap {display:flex;display:-webkit-flex;align-items:center;justify-content:space-around;padding:10px;}
+.btn-wrap .btn-item {border-radius:5px;text-align:center;padding:0px 5px;color:#fff;font-size:1.3em;flex:1;margin:3px;line-height:2;}
+
+.hd-rout {display:flex;display:-webkit-flex;align-items:center;justify-content:space-around;font-size:1.2em;padding:0 .2rem;text-align:center;}
+.hd-rout .top-ic {display:block;width:1em;height:1em;background:url('') no-repeat center;background-size:100%;position:relative;top:3px;margin:0 auto;}
+.hd-rout .icon-info-gray {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/icon-info-gray.png');}
+.hd-rout .ion-checkmark-circled {background-image:url('//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/ion-checkmark-circled.png');}
+.hd-rout i {font-size:1em;visibility:hidden;}
+.hd-rout .text {padding:.1rem 0;border-bottom:3px solid #fff;}
+.hd-rout .hover {color:#00a9e9;border-bottom:3px solid #00a9e9;}
+.hd-rout .rout-circle {background-color:#dcdcdc;color:#fff;border-radius:100%;display: inline-block;width: 12px;height: 12px;text-align: center;line-height: 12px;font-size: 12px;border:2px solid #dcdcdc;box-sizing:content-box;-webkit-box-sizing:content-box;vertical-align: middle;position: relative;top: -2px;}
+.hd-rout .hover .rout-circle, .hd-rout .bg-blue.rout-circle {background-color:#00a9e9;border-color:#00a9e9;}
+.hd-rout .bg-orange.rout-circle {border-color:#fd6200;}
+
+
+
+.img-list {box-sizing:border-box;background-color:rgba(0,0,0,0.5);height:100%;position:fixed;width:100%;overflow:hidden;padding-top:50%;top:0;left:0;bottom:0;right:0;z-index:11;}
+.img-list .img-ul {display:block;height:100%;width:100%;background-color:#fff;list-style:none;padding:.2em .2em 5em;overflow-y:auto;margin-bottom:10em;box-sizing:border-box;}
+.img-list .img-ul li {height:12em;width:50%;padding:.8em .2em .2em;position:relative;text-align:center;float:left;box-sizing:border-box;}
+.img-list .img-ul li .btn-close {position:absolute;top:0;right:.2em;font-size:2em;}
+.img-list .img-ul li .btn-close image {width:1em;height:1em;}
+.img-list .img-ul li .img {height:100%;overflow:hidden;}
+.img-list .img-ul li .img img,
+.img-list .img-ul li .img image {width:100%;height:100%;}
+.img-list .btn-wrap {position:absolute;bottom:-10px;left:0;right:0;background-color:#fff;}
+
+.list-key-val .weui-cells .weui-cell__bd {min-width:5em;}
+
+/*材料列表 12-23*/
+.my-talk-list.material-list.weui-cells {background:#f8f8f8;}
+.my-talk-list.material-list.weui-cells:after {border:none;}
+.my-talk-list.material-list .weui-cell {padding: 10px 15px;background: #fff;margin-bottom: 10px;box-sizing:border-box;}
+.my-talk-list.material-list .weui-cell:before {border:none;}
+.material-title-wrap {overflow:hidden;width:calc(100vw - 30px);}
+.material-title {line-height:1.5;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.material-title-text {width:calc(100% - .5em);line-height:1.5;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.marerial-more {width:2em;line-height:1.5;display:none;}
+
+.material-wrap {border-top:1px dashed #dcdcdc;padding-top:.5em;margin-top:5px;width:calc(100vw - 30px);}
+.material-wrap .material-state {width:1em;height:2em;line-height:2;}
+.material-wrap .material-state i {font-size:1em;width:2em;height:2em;}
+.material-wrap .material-add {width:2em;height:2em;line-height:2;border:1px solid #dcdcdc;background:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/icon/jia.png) no-repeat center #f1f1f1;overflow:hidden;position:relative;background-size:100%;box-sizing:border-box;}
+.material-wrap .material-add i {font-size:3em;position:absolute;left:50%;top:50%;-webkit-transform:translate3d(-50%,-50%,0);line-height:2;display:block;}
+.material-wrap .material-add i .icon-img {left:10%;}
+.material-imgs-wrap {margin:0 2.3em 0 1.8em;position:relative;height:2em;overflow:hidden;background:#f8f8f8;}
+.material-imgs-wrap .img-loading {right:0;width:2em;height:2em;text-align:center;line-height:2;top:0;}
+.material-imgs-wrap .material-imgs-shade {position:absolute;top:0;bottom:0;left:0;right:0;background-color:rgba(0, 169, 233, 0.7);font-size:.8em;line-height:2.5;}
+.material-imgs-wrap .material-imgs {overflow:hidden;position:relative;}
+.material-imgs-wrap .material-imgs img,
+.material-imgs-wrap .material-imgs .material-img {width:1em;height:1.5em;float:left;margin:.25em 2px;}
+
+.btn-jia {width:50px;height:50px;background:url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/nav/btn-jia.png) no-repeat center;background-size:100%;float:right;border-radius:100%;position:relative;right:-9px;}
+.btn-jia.hover {background-image: url(//weigov.baoan.gov.cn/weigov/plug-in/weixin/weigov/images/nav/btn-close.png);}
+.btn-jia-fixed {position:fixed;z-index:14;bottom:1.5em;right:2em;margin-right:-9px;}
+.nav-fixed {position:fixed;z-index:13;left:0;right:0;top:0;bottom:0;background-color:rgba(0,0,0,.4);}
+.nav-fixed .nav-list-wrap {position:absolute;bottom:1.5em;right:2em;}
+.nav-fixed .nav-list .item {display:block;}
+.nav-fixed .nav-list .item .text{text-align:center;color:#333;padding: 0.3em 1em;margin: 0 10px 10px;background:#fff;display:inline-block;position: relative;top: -5px;border-radius: 5px;}
+.nav-fixed .nav-list .item .img {width:1.5em;height:1.5em;border-radius:100%;background:#fff;padding:0.7em;display:inline-block;}
+.nav-fixed .nav-list .item .img image {width:100%;height:100%;}
+
+
+.animated{-webkit-animation-duration:1s;animation-duration:1s;animation-timing-function:linear;-webkit-animation-timing-function:linear;}
+.animated.infinite{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;}
+.circle{-webkit-animation-name:circle;animation-name:circle;}
+@-webkit-keyframes circle{
+    0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+
+
+/*收件地址*/
+.blue-radio .weui-icon-checked {position:relative;top:-3px;}
+.weui-cells_checkbox .no-hover.weui-cell:active {background-color:transparent;}
+.position-item {border-bottom:1px solid #ededed;}

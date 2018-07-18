@@ -1,0 +1,59 @@
+<view class="page bg-white">
+
+
+    <div class="text-list mg-40" id="hide1">
+        <div class="text-item pd-40 bg-white mgb-40" wx:for="{{list}}" wx:for-item="it">
+
+            <div wx:if="{{it.STATUS=='6'}}" class="state state-success state-success" ng-class="{true: 'state-success', false: 'state-failed'}[it.STATUS=='6']">
+                <div class="state-text" ng-bind="it.STATUS=='6'?'预约成功':'预约取消'">{{it.STATUS=='6'?'预约成功':'预约取消'}}</div>
+            </div>
+            <div wx:else class="state state-success state-failed" ng-class="{true: 'state-success', false: 'state-failed'}[it.STATUS=='6']">
+                <div class="state-text" ng-bind="it.STATUS=='6'?'预约成功':'预约取消'">{{it.STATUS=='6'?'预约成功':'预约取消'}}</div>
+            </div>
+            <div class="p clearfix">
+                <div class="hd text-blue text-right">业务流水号</div>
+                <div class="bd text-title" ng-bind="it.BSNUM">{{it.BSNUM}}</div>
+            </div>
+            <div class=" clearfixp">
+                <div class="hd text-blue text-right">预约事项</div>
+                <div class="bd text-title" ng-bind="it.PNAME">{{it.PNAME}}</div>
+            </div>
+            <div class="p clearfix">
+                <div class="hd text-blue text-right">预约部门</div>
+                <div class="bd text-title" ng-bind="it.DEPTNAME">{{it.DEPTNAME}}</div>
+            </div>
+            <div class="p clearfix">
+                <div class="hd text-blue text-right">预约人</div>
+                <div class="bd text-title" ng-bind="it.APPLICANT">{{it.APPLICANT}}</div>
+            </div>
+            <div class="p clearfix">
+                <div class="hd text-blue text-right">预约时间</div>
+                <div class="bd text-title" ng-bind="it.RESERVEDATE">{{it.RESERVEDATE}}</div>
+            </div>
+            <div class="p clearfix">
+                <div class="hd text-blue text-right">预约时间段</div>
+                <div class="bd text-title" ng-bind="it.RESERVETIME">{{it.RESERVETIME}}</div>
+            </div>
+        </div>
+
+
+        <div class="bg-blue text-center text-white pd-10" bindtap="findMore" wx:if="{{showMore}}">加载更多</div>
+    </div>
+
+
+    <div class="bg-white" wx:if="{{noData}}">
+        <div class="page__hd pd-40">
+        </div>
+        <div class="page__bd">
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips bg-white">暂无数据</span>
+            </div>
+        </div>
+    </div>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

@@ -1,0 +1,37 @@
+<view class="page bg-white">
+
+
+    <section class="bg-white ">
+
+        <div class="pdl-40 pdr-40 pdb-50">
+
+            <div class="input-title mgt-20">咨询部门</div>
+            <div class="input-group">
+                <div class="input-group"><input ng-disabled="true" disabled="true" data-id="bumen" bindinput="bindKeyInput" value="{{bumen}}" type="text"/></div>
+            </div>
+
+            <div class="input-title mgt-20" >咨询标题</div>
+            <div class="input-group"><input data-id="title" disabled="true"  bindinput="bindKeyInput" value="{{title}}" type="text"/></div>
+
+            <div class="input-title mgt-20" >咨询内容</div>
+            <div class="input-group">
+                <textarea  data-id="content" bindinput="bindKeyInput" cols="30" rows="10" value="{{content}}"></textarea>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <view class="">
+        <div class="list-hd">
+            <a bindtap="talk" class="weui-btn weui-btn_primary bg-blue">立即咨询</a>
+        </div>
+    </view>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

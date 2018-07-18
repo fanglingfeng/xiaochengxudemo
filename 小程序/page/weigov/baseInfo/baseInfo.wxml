@@ -1,0 +1,76 @@
+<import src="../../../common/dialogs.wxml"></import>
+<template is="dialogs" data="{{...dialogs}}"/>
+<view class="page">
+    <section class="bg-white hd-rout">
+        <span class="text hover">
+            <span class="top-ic icon-info-gray " wx:if="{{stateBaseInfo!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateBaseInfo==1}}"></span>
+            <span class="rout-circle">1</span>
+            基本表单</span>
+        <span bindtap="toStep4" class="text  text-gray">
+            <span class="top-ic icon-info-gray " wx:if="{{stateStep4!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateStep4==1}}"></span>
+            <span class="rout-circle" >2</span>
+            上传资料</span>
+        <span bindtap="toStep5" class="text  text-gray">
+            <span class="top-ic icon-info-gray " wx:if="{{stateStep5!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateStep5==1}}"></span>
+            <span class="rout-circle" >3</span>
+            领取证照</span>
+    </section>
+
+    <div class="pd-40 bg-white has-footer mgt-20 scroll-content">
+        <div class="input-group input-text mgb-40">
+            <span class="text v-center required">联系人</span>
+            <input type="text"  data-id="REALNAME" value="{{REALNAME}}" bindinput="bindKeyInput" placeholder="请输入联系人"/>
+        </div>
+
+        <div class="input-group input-text mgb-40">
+            <span class="text v-center required">移动电话</span>
+            <input type="text"  data-id="MOBILE" value="{{MOBILE}}" bindinput="bindKeyInput" placeholder="请输入手机号码"/>
+        </div>
+
+        <div class="input-group input-text mgb-40">
+            <div class="input-group input-text mgb-40">
+                <span class="text v-center required">证件类型</span>
+                <select class="select"  data-id="CERTIFICATETYPE">
+                    <option selected="selected" value="1">身份证</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group input-text mgb-40">
+            <span class="text v-center required">证件号码</span>
+            <input type="text"  data-id="USER_PID" value="{{USER_PID}}" bindinput="bindKeyInput" placeholder="请输入证件号码"/>
+        </div>
+
+        <div class="input-group input-text mgb-40">
+            <span class="text v-center">电子邮箱</span>
+            <input type="text"  data-id="USER_EMAIL" value="{{USER_EMAIL}}" bindinput="bindKeyInput" placeholder="请输入电子邮箱"/>
+        </div>
+        <div class="input-group input-text mgb-40">
+            <span class="text v-center">联系电话</span>
+            <input type="text" data-id="USER_PHONE" value="{{USER_PHONE}}" bindinput="bindKeyInput" placeholder="请输入联系电话"/>
+        </div>
+        <div class="input-group input-text mgb-40">
+            <span class="text area-text">联系地址</span>
+            <input type="text" data-id="comment" value="{{comment}}" bindinput="bindKeyInput" placeholder="请输入联系地址"/>
+        </div>
+
+    </div>
+
+    <div class="footer-fixed pd-40">
+        <p class="bg-white text-waring">注：带*号的都为必填内容</p>
+        <div class="foot-actions">
+            <a bindtap="prev" class="action weui-btn weui-btn_primary ">上一步</a>
+            <a bindtap="tempStore" class="action weui-btn weui-btn_primary ">暂存</a>
+            <a bindtap="next" class="action weui-btn weui-btn_primary bg-blue text-white">下一步</a>
+        </div>
+    </div>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        {{loadingText}}
+    </loading>
+
+</view>
+

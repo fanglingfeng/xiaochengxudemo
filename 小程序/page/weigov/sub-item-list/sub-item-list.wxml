@@ -1,0 +1,72 @@
+<view class="page">
+
+    <view class="pd-20 bg-white">
+        <div class="search-wrap search-audio-wrap flex">
+            <!--输入框-->
+            <div class="search-input">
+                <div class="pull-left pdl-10">
+                    <span class="ion-ios-search v-center search-icon"></span>
+                </div>
+                <div class="btn-camera pull-right" id="camera"  wx:if="{{isInput}}" bindtap="clear">
+                    <span class="ion-ios-close search-icon v-center"></span>
+                </div>
+                <div class="inp-wrap">
+                    <form >
+                        <input autocomplete="off" class="thing-input" focus="{{isFocus}}" bindinput="bindKeyInput" value="{{tag}}" type="text"  placeholder="搜索"/>
+                    </form>
+                </div>
+            </div>
+            <!--输入框-->
+            <!--btns-->
+            <div class="search-btns">
+               <!-- <div bindtap="voiceSearch" class="btn-search btn-mic v-center" wx:if="{{!isInput}}">
+                    <span class="ion-ios-mic search-icon "><image class="icon-img v-center right" src="/image/mic-hover.png"></image></span>
+                </div>
+                <div bindtap="search" wx:if="{{isInput}}" class="btn-search text-center v-center">搜索</div>-->
+                <div bindtap="search" class="btn-search text-center v-center">搜索</div>
+            </div>
+            <!--btns-->
+        </div>
+    </view>
+
+
+
+    <div class="weui-cells my-talk-list mgt-20 bg-white">
+        <div wx:for="{{list}}"  wx:if='{{item.CODE3<=756 && !!item.CODE3}}'>
+        <view  hover-class="navigator-hover" class="weui-cell weui-cell_access {{showActions[item.ID]==1?'hover':''}}" bindtap="show" data-id="{{item.ID}}">
+            <div class="weui-cell__bd">
+                <view><text>{{item.SXZXNAME}}</text></view>
+                <view class="pd-5"></view>
+                <view class="text-black ft-s-8">事项编码：<span><text>{{item.CODE3}}</text></span><span wx:if='{{item.CODE4!=""}}'>(<text>{{item.CODE4}}</text>)</span> <span class="text-gray mgl-10"><text>{{item.DEPTNAME}}</text></span></view>
+                <span class="state-collect state-apply ft-s-6" wx:if="{{item.SFYDSB==1}}">可申报</span>
+                <span class="state-collect state-order ft-s-6" wx:if="{{item.ISRESERVE==1}}">可预约</span>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </view>
+        <div class="item-actions" wx:if="{{showActions[item.ID] == 1}}">
+            <navigator url="../item-detail/item-detail?ID={{item.ID}}" class="item-action"><div class="img img-guide"></div><p class="text">指南</p></navigator>
+            <div bindtap="goApply" data-id="{{item.ID}}" class="item-action"><div class="img img-apply"></div><p class="text">申报</p></div>
+           <!-- <div bindtap="kefu" data-id="{{item.ID}}" class="item-action"><div class="img img-kefu"></div><p class="text">客服</p></div>-->
+            <a href="tel:075585908590" bindtap="calling" class="item-action"><div class="img img-tel"></div><p class="text">热线</p></a>
+            <div bindtap="goOrder" data-id="{{item.ID}}" class="item-action"><div class="img img-order"></div><p class="text">预约</p></div>
+        </div>
+        </div>
+    </div>
+
+
+    <!--<%--暂无数据提示 start--%>-->
+    <div class="bg-white"   wx:if="{{hasAllData}}">
+        <div class="page__hd pd-40">
+        </div>
+        <div class="page__bd">
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips bg-white">暂无数据</span>
+            </div>
+        </div>
+    </div>
+    <!--<%--暂无数据提示 end--%>-->
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+       {{loadingText}}
+    </loading>
+</view>

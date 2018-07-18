@@ -1,0 +1,26 @@
+<template name="dialogs">
+    <!--<%--暂无数据提示 start--%>-->
+    <div class="bg-white" wx:if="{{hasAllData}}">
+        <div class="page__hd pd-40">
+        </div>
+        <div class="page__bd">
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips bg-white">暂无数据</span>
+            </div>
+        </div>
+    </div>
+    <!--<%--暂无数据提示 end--%>-->
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        {{loadingText}}
+    </loading>
+
+    <view class="wetoast {{reveal ? 'wetoast_show' : ''}}">
+        <view class="wetoast__mask"></view>
+        <view class="wetoast__bd {{position}}" animation="{{animationData}}">
+            <block wx:if="{{title}}">
+                <view class="wetoast__bd__title {{titleClassName || ''}}">{{title}}</view>
+            </block>
+        </view>
+    </view>
+</template>

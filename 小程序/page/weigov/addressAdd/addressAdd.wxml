@@ -1,0 +1,34 @@
+<import src="../../../common/dialogs.wxml"></import>
+<template is="dialogs" data="{{...dialogs}}"/>
+<view class="page">
+    <div class="pd-40 bg-white">
+        <div class="input-group-flex mgb-20">
+            <span class="text">收件人:</span>
+            <input type="text" class="input" bindinput="bindKeyInput" data-id="uname" value="{{uname}}" placeholder="请输入姓名"/>
+        </div>
+
+        <div class="input-group-flex mgb-20">
+            <span class="text">联系电话:</span>
+            <input type="text" class="input" bindinput="bindKeyInput" data-id="tel" value="{{tel}}" placeholder="请输入联系电话"/>
+        </div>
+
+        <div class="input-group-flex ">
+            <span class="text">地址:</span>
+            <textarea class="input" bindinput="bindKeyInput" data-id="address" placeholder="请输入邮寄地址" value="{{address}}"></textarea>
+        </div>
+    </div>
+
+    <div class="pd-40 bg-white mgt-20">
+        <a bindtap="saveOrUpdate" class="action weui-btn weui-btn_primary bg-blue">保存</a>
+    </div>
+
+    <div class="pd-40 bg-white mgt-20" ng-if="postId!=''">
+        <a bindtap="del" class="action weui-btn weui-btn_primary bg-orange">删除</a>
+    </div>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        {{loadingText}}
+    </loading>
+
+</view>
+

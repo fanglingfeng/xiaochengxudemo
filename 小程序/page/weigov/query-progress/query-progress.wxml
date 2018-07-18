@@ -1,0 +1,24 @@
+<view class="page bg-white">
+
+    <div class="pd-40">
+
+        <div class="search-wrap">
+            <!--输入框-->
+            <div class="search-input">
+                <div class="btn-camera pull-right" id="camera">
+                    <span wx:if="{{!isInput}}" bindtap="scan" class="ion-qr-scanner search-icon v-center"></span>
+                    <span wx:if="{{isInput}}" bindtap="clear" class="ion-ios-close search-icon v-center"></span>
+                </div>
+                <div class="inp-wrap">
+                    <input type="text" placeholder="请输入业务流水号" bindinput="bindKeyInput" value="{{BSNUM}}" />
+                </div>
+            </div>
+            <!--输入框-->
+        </div>
+
+        <a href="javascript:;" class="weui-btn weui-btn_primary bg-blue mgt-40 mgb-40" bindtap="search">查询</a>
+
+
+    </div>
+
+</view>

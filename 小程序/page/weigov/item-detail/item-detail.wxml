@@ -1,0 +1,112 @@
+<view class="page">
+
+    <div class="text-blue list-hd bg-gray" ng-bind="itemInfo.SXZXNAME">
+        <text>{{data.SXZXNAME}}</text>
+    </div>
+    <div class="weui-cells big-margin my-talk-list has-footer ">
+        <a class="weui-cell weui-cell_access {{item1?'hover':''}}" bindtap="changeStatus1">
+            <div class="weui-cell__hd mgr-20"><image  id="i1" src="/image/item/dt-condition.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>办理条件</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+
+        <div class="pd-40 bg-gray "  id="d1" wx:if="{{item1}}">
+            <view>{{data.SPTJ}}</view>
+        </div>
+
+        <a class="weui-cell weui-cell_access {{item2?'hover':''}}" href="javascript:;" bindtap="changeStatus2">
+            <div class="weui-cell__hd mgr-20"><image id="i2" src="/image/item/dt-readme.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>申请材料说明</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+
+        <div class="pd-40 bg-gray" ng-bind-html="data.SQCL" id="d2" wx:if="{{item2}}"><view>{{data.SQCL}}</view></div>
+        <a class="weui-cell weui-cell_access {{item3?'hover':''}}" href="javascript:;" bindtap="changeStatus3">
+            <div class="weui-cell__hd mgr-20"><image id="i3" src="/image/item/dt-rout.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>网上办理流程</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <div class="pd-40 bg-gray" ng-bind-html="data.WLBLLC" id="d3" wx:if="{{item3}}"><view>{{data.WLBLLC}}</view></div>
+        <a class="weui-cell weui-cell_access {{item4?'hover':''}}" href="javascript:;" bindtap="changeStatus4">
+            <div class="weui-cell__hd mgr-20"><image id="i4" src="/image/item/dt-time.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>办理限时</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <div class="pd-40 bg-gray" ng-bind-html="data.LIMITDAYS" id="d4" wx:if="{{item4}}"><view>{{data.LIMITDAYS}}</view></div>
+        <a class="weui-cell weui-cell_access {{item5?'hover':''}}" href="javascript:;" bindtap="changeStatus5">
+            <div class="weui-cell__hd mgr-20"><image id="i5" src="/image/item/dt-price.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>标准收费</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <div class="pd-40 bg-gray" ng-bind-html="data.CHARGE" id="d5" wx:if="{{item5}}"><view>{{data.CHARGE}}</view></div>
+
+        <a class="weui-cell weui-cell_access {{item6?'hover':''}}" href="javascript:;" bindtap="changeStatus6">
+            <div class="weui-cell__hd mgr-20"><image id="i6" src="/image/item/dt-from.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>办理依据</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <div class="pd-40 bg-gray" ng-bind-html="data.LAWPRODUCE" id="d6" wx:if="{{item6}}"><view>{{data.LAWPRODUCE}}</view></div>
+        <a class="weui-cell weui-cell_access {{item7?'hover':''}}" href="javascript:;" bindtap="changeStatus7">
+            <div class="weui-cell__hd mgr-20"><image id="i7" src="/image/item/dt-window.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>办理窗口</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <div class="pd-40 bg-gray" wx:for="{{data.WINDOWS}}" id="d7" wx:if="{{item7}}">
+            <view>窗口名称:<span ng-bind="item.NAME"><text>{{item.NAME}}</text></span></view>
+            <view>工作时间:<span ng-bind="item.OFFICEHOURS"><text>{{item.OFFICEHOURS}}</text></span></view>
+            <view>地址:<span ng-bind="item.ADDRESS"><text>{{item.ADDRESS}}</text></span></view>
+            <view>联系电话:<span ng-bind="item.PHONE"><text>{{item.PHONE}}</text></span></view>
+            <view>交通指引:<span ng-bind="item.TRAFFIC"><text>{{item.TRAFFIC}}</text></span></view>
+        </div>
+
+        <a class="weui-cell weui-cell_access {{item8?'hover':''}}" href="javascript:;" bindtap="changeStatus8">
+            <div class="weui-cell__hd mgr-20"><image id="i8" src="/image/item/dt-excel.png" alt="" style="width:1.5em;height:1.5em;display:block" /></div>
+            <div class="weui-cell__bd">
+                <p>审批表格下载</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <div class="pd-40 bg-gray" id="d8" wx:if="{{item8}}">
+		<view class="link-line-wrap" wx:for="{{data.table}}" bindtap="downFile" data-id="{{item.id}}" id="{{item.id}}" data-name="{{item.name}}" >
+		    <a  class="link-line"  href="http://203.91.37.98:8083/servlet/downloadFileServlet?fileNo={{item.id}}" target="_blank"><text>{{item.name}}</text></a>
+		</view>
+        </div>
+    </div>
+
+    <view class="btn-wrap footer-fixed" hidden="{{!1}}">
+        <a bindtap="next" data-type="1" class="btn-item bg-blue ">申报</a>
+        <a bindtap="next" data-type="2" class="btn-item bg-blue ">预约</a>
+        <a bindtap="next" data-type="3" class="btn-item bg-blue ">咨询</a>
+        <a wx:if="{{isCollect}}" bindtap="next" data-type="4" class="btn-item bg-blue">已收藏</a>
+        <a wx:if="{{!isCollect}}" bindtap="next" data-type="4" class="btn-item bg-blue">收藏</a>
+    </view>
+
+
+    <div class="js_dialog hide" id="iosDialog2" style="opacity: 1;" ng-hide="dgFlag">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__bd" ng-bind="tips"></div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" bindtap="dgFlag=!dgFlag">知道了</a>
+            </div>
+        </div>
+    </div>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>

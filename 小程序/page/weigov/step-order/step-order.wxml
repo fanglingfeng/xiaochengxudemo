@@ -1,0 +1,63 @@
+<view class="page bg-white">
+
+    <div class="has-footer">
+        <div class="pd-40">
+            <div class="input-hd">
+                <span class="text required">预约人</span>
+                <div class="input-group"><input data-id="REALNAME"  bindinput="bindKeyInput" value="{{REALNAME}}" type="text"/></div>
+            </div>
+            <div class="input-hd">
+                <span class="text required">预约电话</span>
+                <div class="input-group"><input data-id="MOBILE" bindinput="bindKeyInput" value="{{MOBILE}}" type="text"/></div>
+            </div>
+            <div class="input-hd">
+                <span class="text required">证件号码</span>
+                <div class="input-group"><input data-id="IDCARD" bindinput="bindKeyInput" value="{{IDCARD}}" type="text"/></div>
+            </div>
+            <div class="input-hd">
+                <span class="text required">预约部门</span>
+                <div class="input-group"><input ng-disabled="true" disabled="true" data-id="DEPTNAME" bindinput="bindKeyInput" value="{{DEPTNAME}}" type="text"/></div>
+            </div>
+            <div class="input-hd">
+                <span class="text required">预约事项</span>
+                <div class="input-group"><input ng-disabled="true" disabled="true" data-id="SXZXNAME" bindinput="bindKeyInput" value="{{SXZXNAME}}" type="text"/></div>
+            </div>
+            <div class="input-hd">
+                <span class="text required">预约日期</span>
+                <div class="input-group">
+                    <radio-group class="radio-group" bindchange="radioChange" data-id="riqi" style="padding-top:10px;">
+                        <label class="radio block" wx:for="{{dates}}">
+                            <radio value="{{item.seq}}"  checked="{{riqi == item.seq}}" />{{item.RESERVEDATE}}
+                        </label>
+                    </radio-group>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="input-hd">
+                <span class="text required">时间段</span>
+                <div class="input-group">
+                    <radio-group class="radio-group" bindchange="radioChange" data-id="shiduan" style="padding-top:10px;">
+                        <label class="radio block" wx:for="{{times}}">
+                            <radio value="{{item.seq}}"  disabled="{{isDates}}" checked="{{shiduan == item.seq}}" />{{item.RESERVETIME}}
+                        </label>
+                    </radio-group>
+                </div>
+            </div>
+        </div>
+
+        <div class="pd-40 text-waring">
+            预约时间：每个事项可提前在办事前1天上网预约。<br/>
+            优先叫号：预约生效后，申请人凭身份证或手机号码到政务服务中心优先取号。
+        </div>
+    </div>
+    <div class="list-hd footer-fixed">
+        <a bindtap="next" class="weui-btn weui-btn_primary bg-blue">提交</a>
+    </div>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        {{loadingText}}
+    </loading>
+
+
+</view>

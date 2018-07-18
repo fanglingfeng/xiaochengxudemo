@@ -1,0 +1,27 @@
+<view class="page">
+    <div class="pd-40 bg-white">
+
+        <p class="text-waring mgt-40">如果您已经注册过网上办事大厅帐号，请输入信息并提交</p>
+
+        <div class="input-group">
+            <input type="text" class="mgt-40" bindinput="bindKeyInput" value="{{username}}" focus="{{usernameFocus}}" data-id="username"  ng-model="username" placeholder="用户名/手机号/邮箱/身份证号"/>
+        </div>
+
+        <div class="input-group">
+            <input type="password" class="mgt-40 mgb-40" bindinput="bindKeyInput" focus="{{passwordFocus}}" value="{{password}}" data-id="password"  ng-model="password" placeholder="请输入密码"/>
+        </div>
+
+        <a href="javascript:;" class="weui-btn weui-btn_primary bg-blue mgt-40 mgb-40" bindtap="login">立即绑定</a>
+
+    </div>
+
+    <div class="pd-40 bg-white mgt-40">
+        <p class="text-waring mgt-45">如果您未注册过网上办事大厅帐号，请点击</p>
+        <a href="javascript:;" class="weui-btn weui-btn_primary bg-blue mgt-40 mgb-40" bindtap="register">完善个人信息</a>
+    </div>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
+

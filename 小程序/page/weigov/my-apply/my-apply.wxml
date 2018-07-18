@@ -1,0 +1,64 @@
+<view class="page bg-white">
+
+    <div class="weui_panel weui_panel_access" >
+
+        <div class="weui_panel_bd" id="hide1">
+            <div class="text-list mg-40">
+
+                <div bindtap="goPage" data-PERMID="{{it.PERMID}}" data-BSNUM="{{it.BSNUM}}" data-CSTATUS="{{it.CSTATUS}}" class="text-item pd-40 bg-white mgb-40" wx:for="{{list}}" wx:for-item="it">
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">业务流水号</div>
+                        <div class="bd text-title" ng-bind="it.BSNUM">{{it.BSNUM}}
+                        </div>
+                    </div>
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">办事事项</div>
+                        <div class="bd text-title" ng-bind="it.PNAME">{{it.PNAME}}</div>
+                    </div>
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">办理时间</div>
+                        <div class="bd text-title" ng-bind="it.CREATETIME">{{it.CREATETIME}}</div>
+                    </div>
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">办理部门</div>
+                        <div class="bd text-title" ng-bind="it.DEPTNAME">{{it.DEPTNAME}}</div>
+                    </div>
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">申请人</div>
+                        <div class="bd text-title" ng-bind="it.APPLICANT==null?'无':it.APPLICANT">{{it.APPLICANT==null?'无':it.APPLICANT}}</div>
+                    </div>
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">申请单位</div>
+                        <div class="bd text-title" ng-bind="it.COMPANY==null?'无':it.APPLICANT">{{it.COMPANY==null?'无':it.APPLICANT}}</div>
+                    </div>
+                    <div class="p clearfix">
+                        <div class="hd text-blue text-right">状态</div>
+                        <div class="bd text-waring" ng-bind="it.CSTATUS">{{it.CSTATUS}}</div>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-blue text-center text-white pd-10" bindtap="findMore" wx:if="{{showMore}}">加载更多</div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-white" wx:if="{{noData}}">
+        <div class="page__hd pd-40">
+        </div>
+        <div class="page__bd">
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips bg-white">暂无数据</span>
+            </div>
+        </div>
+    </div>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

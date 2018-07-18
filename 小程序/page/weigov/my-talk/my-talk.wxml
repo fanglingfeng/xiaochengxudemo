@@ -1,0 +1,37 @@
+<view class="page bg-white">
+
+
+    <div class="weui-cells mgt-5 my-talk-list" id="hide1">
+        <navigator wx:for="{{list}}" wx:for-item="it" url="../my-talk-detail/my-talk-detail?MAINTITLE={{it.MAINTITLE}}" hover-class="navigator-hover" class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <p wx:if="{{it.SXMC}}">{{it.SXMC}}</p>
+                <p wx:else="{{!it.SXMC}}" ng-bind="it.MAINTITLE">{{it.MAINTITLE}}</p>
+                <p class="pd-10"></p>
+                <p class="text-gray"><span class="text-gray" ng-bind="it.CREATETIME">{{it.CREATETIME}}</span>
+                    <span class="bg-blue text-white state-reply" wx:if="{{it.SFHF==1}}">已回复</span>
+                    <span class="bg-gray state-reply" wx:if="{{it.SFHF==0}}">未回复</span>
+                </p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+
+        <div class="bg-blue text-center text-white pd-10" bindtap="findMore" wx:if="{{showMore}}">加载更多</div>
+    </div>
+
+
+    <div class="bg-white" wx:if="{{noData}}">
+        <div class="page__hd pd-40">
+        </div>
+        <div class="page__bd">
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips bg-white">暂无数据</span>
+            </div>
+        </div>
+    </div>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

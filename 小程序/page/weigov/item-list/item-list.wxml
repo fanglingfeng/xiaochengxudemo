@@ -1,0 +1,116 @@
+<import src="../../../common/dialogs.wxml"></import>
+<template is="dialogs" data="{{...dialogs}}"/>
+<view class="page">
+    <view class="pd-20 bg-white">
+        <!--输入框-->
+        <form onsubmit="">
+            <div bindtap="search" class="search-wrap search-audio-wrap flex">
+                <!--输入框-->
+                <div  class="search-input">
+                    <div class="pull-left pdl-10">
+                        <span class="ion-ios-search v-center search-icon"></span>
+                    </div>
+                    <div class="btn-camera pull-right " id="camera"  ><span class="ion-ios-mic search-icon v-center"></span></div>
+                    <div class="inp-wrap">
+                        搜索
+                    </div>
+                </div>
+                <!--输入框-->
+            </div>
+        </form>
+    </view>
+
+    <view class="bg-white mgt-20">
+        <ul class="tab-hd clearfix">
+            <view hidden="{{!isTheme}}">
+                <li class="hover" bindtap="showTheme">按主题分类</li>
+                <li class=""  bindtap="showDepartment">按部门分类</li>
+            </view>
+            <view hidden="{{isTheme}}">
+                <li class="" bindtap="showTheme">按主题分类</li>
+                <li class="hover"  bindtap="showDepartment">按部门分类</li>
+            </view>
+        </ul>
+
+        <view class="theme-wrap clearfix" hidden="{{!isTheme}}">
+            <block wx:for-items="{{dataTheme}}">
+                <navigator  wx:if="{{item.PICTURETYPE==source}}" class="li"  url="../sub-item-list/sub-item-list?itemType=business&PICTURECODE={{item.PICTURECODE}}" hover-class="navigator-hover">
+                        <view class="hd i"><image class="img" src="{{item.PICTUREPATH}}" /></view>
+                        <view class="bd">
+                            <view>{{item.PICTURENAME}}</view>
+                            <view>{{item.PERMCODE}}</view>
+                        </view>
+                </navigator>
+            </block>
+        </view>
+
+
+
+        <view class="clearfix link-list" hidden="{{isTheme}}">
+            <view class="">
+                <div class="list-hd bg-gray">
+                    区直部门
+                </div>
+            </view>
+            <section class="bg-white">
+                <div class="weui-cells my-talk-list">
+                    <navigator  wx:if="{{item.PERMNUM!=0}}" class="weui-cell weui-cell_access" wx:for="{{dataDepartment.quzhi.ReturnValue}}" url="../sub-item-list/sub-item-list?itemType=list&DEPTID={{item.DEPTID}}" hover-class="navigator-hover">
+                        <div class="weui-cell__bd">
+                            <text>{{item.SHORTNAME}}</text><text class="pdl-10"></text><text>({{item.PERMNUM}})</text>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </navigator>
+                </div>
+                <div class="part-wrap clearfix">
+                </div>
+            </section>
+
+            <section class="">
+                <div class="list-hd bg-gray">
+                    驻区部门
+                </div>
+            </section>
+            <section class="bg-white">
+                <div class="weui-cells my-talk-list">
+                    <navigator  wx:if="{{item.PERMNUM!=0}}" class="weui-cell weui-cell_access" wx:for="{{dataDepartment.zhuqu.ReturnValue}}" url="../sub-item-list/sub-item-list?itemType=out&DEPTID={{item.DEPTID}}" hover-class="navigator-hover">
+                        <div class="weui-cell__bd">
+                            <text>{{item.SHORTNAME}}</text><text class="pdl-10"></text><text>({{item.PERMNUM}})</text>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </navigator>
+                </div>
+                <div class="part-wrap clearfix">
+                </div>
+            </section>
+
+            <section class="">
+                <div class="list-hd bg-gray">
+                    街道
+                </div>
+            </section>
+            <section class="bg-white">
+                <div class="weui-cells my-talk-list">
+                    <navigator  class="weui-cell weui-cell_access" wx:for="{{dataDepartment.jiedao.ReturnValue}}" url="../department/department?networkType={{networkType}}&DEPTID={{item.DEPTID}}" hover-class="navigator-hover">
+                        <div class="weui-cell__bd">
+                            <text>{{item.SHORTNAME}}</text>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </navigator>
+                </div>
+                <div class="part-wrap clearfix">
+                </div>
+            </section>
+        </view>
+
+
+    </view>
+
+    <modal class="modal" hidden="{{!isShowError}}" no-cancel bindconfirm="hideShowError" bindcancel="hideShowError">
+        <view> 未加载到数据,请稍后重试 </view>
+    </modal>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
+

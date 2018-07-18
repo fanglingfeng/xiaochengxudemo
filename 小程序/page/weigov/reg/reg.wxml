@@ -1,0 +1,81 @@
+<view class="page">
+    <div class="pd-40">
+
+        <div class="tab-wrap">
+            <view hidden="{{isGeneral}}">
+                <span class="hd" id="general" bindtap="showGeneral">个   人</span><span class="hd  hover" id="enterprise" bindtap="showEnterprise">企   业</span>
+            </view>
+            <view hidden="{{!isGeneral}}">
+                <span class="hd hover" id="general" bindtap="showGeneral">个   人</span><span class="hd  " id="enterprise" bindtap="showEnterprise">企   业</span>
+            </view>
+        </div>
+
+        <div class="input-group">
+            <input type="text" class="mgt-40" data-id="mobile" value="{{mobile}}" bindinput="bindKeyInput" placeholder="请输入手机号码"/>
+        </div>
+
+
+        <div class="verify-wrap">
+            <div class="input-group">
+                <input type="text" class="mgt-20 mgb-40" data-id="captcha" value="{{captcha}}" bindinput="bindKeyInput" placeholder="请输入验证码"/>
+            </div>
+            <div class="btn">
+                <view hidden="{{showCountdown}}">
+                <a href="javascript:;" id="smsTip" class="weui-btn weui-btn_primary bg-blue mgt-20 mgb-40" bindtap="sendSms">发送验证码<span ng-bind="smsTip"></span></a>
+                </view>
+                <view hidden="{{!showCountdown}}">
+                    <a href="javascript:;" id="smsTip" class="weui-btn weui-btn_primary bg-gray mgt-20 mgb-40"><span ng-bind="smsTip">{{smsTip}}</span></a>
+                </view>
+            </div>
+        </div>
+
+
+        <p class="line-m"></p>
+
+
+        <p class="text-title">设置密码</p>
+
+
+        <div class="input-group">
+            <input type="password" class="mgt-40" data-id="password" value="{{password}}" bindinput="bindKeyInput" placeholder="请输入密码"/>
+        </div>
+
+        <div class="input-group">
+            <input type="password" class="mgt-20" data-id="rePassword" value="{{rePassword}}" bindinput="bindKeyInput" placeholder="请输入确认密码"/>
+        </div>
+
+        <p class="line-m"></p>
+
+
+        <p class="text-title">身份信息</p>
+
+        <div class="input-group">
+            <input type="text" class="mgt-40" data-id="username" value="{{username}}" bindinput="bindKeyInput" placeholder="请输入真实姓名"/>
+        </div>
+        <div class="input-group">
+            <input type="text" class="mgt-20" data-id="idcard" value="{{idcard}}" bindinput="bindKeyInput" placeholder="请输入身份证号码"/>
+        </div>
+
+        <p class="line-m"></p>
+
+
+        <view hidden="{{isGeneral}}">
+            <p class="text-title">企业信息</p>
+
+            <div class="input-group">
+                <input type="text" class="mgt-40" data-id="enterpriseName" value="{{enterpriseName}}" bindinput="bindKeyInput" placeholder="请输入企业名称"/>
+            </div>
+            <div class="input-group">
+                <input type="text" class="mgt-20" data-id="enterpriseCode" value="{{enterpriseCode}}" bindinput="bindKeyInput" placeholder="请输入统一社会信用代码/营业执照/组织机构代码"/>
+            </div>
+        </view>
+
+        <a href="javascript:;" class="weui-btn weui-btn_primary bg-blue mgt-40 mgb-40" bindtap="register">确定</a>
+
+    </div>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
+

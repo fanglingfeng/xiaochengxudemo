@@ -1,0 +1,64 @@
+<view class="page bg-white">
+
+    <div class="text-list pd-40" id="content">
+
+        <div class="text-item bg-white mgb-40 no-bd">
+            <div class="p">
+                <div class="hd text-blue text-right">业务编号</div>
+                <div class="bd text-title" ng-bind="data.BSNUM">{{data.BSNUM}}</div>
+            </div>
+            <div class="p">
+                <div class="hd text-blue text-right">办事名称</div>
+                <div class="bd text-title" ng-bind="data.SXZXNAME">{{data.SXZXNAME}}</div>
+            </div>
+            <div class="p">
+                <div class="hd text-blue text-right">所属部门</div>
+                <div class="bd text-title" ng-bind="data.DEPTNAME">{{data.DEPTNAME}}</div>
+            </div>
+            <div class="p">
+                <div class="hd text-blue text-right">申请人</div>
+                <div class="bd text-title" ng-bind="data.APPNAME">{{data.APPNAME}}</div>
+            </div>
+        </div>
+
+        <div class="line-m"></div>
+
+        <div>
+            <div class="step-wrap">
+                <div class="step-btn bg-green">
+                    开始
+                </div>
+            </div>
+            <div class="text-center step-done-wrap">
+                <div class="step-done"></div>
+            </div>
+        </div>
+
+        <div wx:for="{{logs}}" wx:for-item="log">
+            <div class="step-wrap" >
+                <div class="step-btn bg-green" ng-class="{'bg-blue':$last}" ng-bind="log.IDEA">
+                    {{log.IDEA}}
+                </div>
+                <div class="step-time bg-light-blue">办理时间：<span ng-bind="log.HANDLETIME">{{log.HANDLETIME}}</span></div>
+            </div>
+            <div class="text-center step-done-wrap">
+                <div class="step-done"></div>
+            </div>
+        </div>
+
+
+        <div class="step-wrap" wx:if="{{data.CSTATUS=='办结'}}">
+            <div class="step-btn bg-red" ng-bind="data.CSTATUS" >
+                {{data.CSTATUS}}
+            </div>
+        </div>
+
+        <div class="step-wrap" wx:if="{{data.CSTATUS!='办结'}}">
+            <div class="step-btn bg-blue" ng-bind="data.CSTATUS" >
+                {{data.CSTATUS}}
+            </div>
+        </div>
+
+    </div>
+
+</view>

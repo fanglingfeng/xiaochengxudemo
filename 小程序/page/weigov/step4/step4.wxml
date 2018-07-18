@@ -1,0 +1,86 @@
+<import src="../../../common/dialogs.wxml"></import>
+<template is="dialogs" data="{{...dialogs}}"/>
+<view class="page">
+
+    <section class="bg-white hd-rout">
+        <span bindtap="toBaseInfo" class="text text-gray">
+            <span class="top-ic icon-info-gray " wx:if="{{stateBaseInfo!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateBaseInfo==1}}"></span>
+            <span class="rout-circle">1</span>
+            基本表单</span>
+        <span  class="text  hover">
+            <span class="top-ic icon-info-gray " wx:if="{{stateStep4!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateStep4==1}}"></span>
+            <span class="rout-circle" >2</span>
+            上传资料</span>
+        <span bindtap="toStep5" class="text  text-gray">
+            <span class="top-ic icon-info-gray " wx:if="{{stateStep5!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateStep5==1}}"></span>
+            <span class="rout-circle" >3</span>
+            领取证照</span>
+    </section>
+
+    <section class="bg-white mgt-20 has-footer scroll-content">
+        <div class="weui-cells my-talk-list material-list">
+            <a class="weui-cell weui-cell_access" href="javascript:;" wx:for="{{list}}" >
+                <div class="weui-cell__bd">
+                    <div class="material-title-wrap">
+                        <div data-title="{{item.CLMC}}" class="marerial-more pull-right text-center"><i class="ion-ios-more-outline text-gray"></i></div>
+                        <div class="material-title"  bindtap="showMaterialTitle"  data-id="{{item.CLMC}}">
+                            <span wx:if="{{item.SFBY == 1}}" class="text-red">*</span>
+                            <span class="material-title-text" ng-bind="item.CLMC">{{item.CLMC}}</span>
+                        </div>
+                    </div>
+                    <div class="material-wrap">
+                        <div class="material-state pull-left relative">
+                            <i class="v-center text-gray ion-information-circled" wx:if="{{(materialNumber[item.ID].uploaded==0)}}"><image class="icon-img v-center left" src="/image/information-circled.png"></image></i>
+                            <i class="v-center text-green ion-checkmark-circled" wx:if="{{(materialNumber[item.ID].uploaded!=0)}}"><image class="icon-img v-center left" src="/image/checkmark.png"></image></i>
+                        </div>
+                        <div class="material-add pull-right relative text-center" bindtap="uploadImgByMaterial" data-id="{{item.ID}}"></div>
+                        <div class="material-imgs-wrap" bindtap="showImgListByMaterial" data-id="{{item.ID}}">
+                            <div class="material-imgs">
+                                <image class="material-img" wx:for="{{materials[item.ID]}}" wx:for-item="img" src="{{img.localid}}" />
+                                <div class="img-loading hide text-gray ion-load-a v-center circle animated infinite" wx:if="{{materialNumber[item.ID].uploading!=0}}" ng-class="{'show':materialNumber[item.ID].uploading!=0}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <div class="footer-fixed pd-40">
+        <p class="bg-white text-waring">注：带*号的都为必须提交的材料</p>
+        <div class="foot-actions">
+            <a bindtap="toBaseInfo" class="action weui-btn weui-btn_primary ">上一步</a>
+            <a bindtap="tempStore" class="action weui-btn weui-btn_primary ">暂存</a>
+            <a bindtap="toStep5" class="action weui-btn weui-btn_primary bg-blue text-white">下一步</a>
+        </div>
+    </div>
+
+    <section class="img-list" wx:if="{{imgListStatues}}" id="img-list" bindtap="hideImgList">
+        <ul class="img-ul">
+            <li wx:for="{{imgList}}" wx:for-index="k">
+                <span catchtap="imgDel" data-id="{{k}}" class="btn-close ion-close-circled text-gray">
+                    <image src="/image/close.png" />
+                </span>
+                <div class="img">
+                    <image src="{{item.localid}}"  catchtap="previewImage" data-id="{{item.localid}}" />
+                </div>
+            </li>
+        </ul>
+
+        <div class="btn-wrap">
+            <a href="javascript:;" class="btn-item bg-blue " catchtap="takePhoto">添加</a>
+            <a href="javascript:;" class="btn-item bg-blue " bindtap="hideImgList">确定</a>
+        </div>
+    </section>
+
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+
+</view>

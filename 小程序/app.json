@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "page/weigov/item-list/item-list",
+    "page/weigov/sub-item-list/sub-item-list",
+    "page/weigov/item-detail/item-detail",
+
+    "page/weigov/baseInfo/baseInfo",
+    "page/weigov/step4/step4",
+    "page/weigov/step5/step5",
+    "page/weigov/addressList/addressList",
+    "page/weigov/addressAdd/addressAdd",
+
+    "page/weigov/step-order/step-order",
+    "page/weigov/step-talk/step-talk",
+
+    "page/weigov/company/company",
+    "page/weigov/network/network",
+    "page/weigov/map/map",
+    "page/weigov/department/department",
+    "page/weigov/networkAddressDetail/networkAddressDetail",
+
+    "page/weigov/mine/mine",
+    "page/weigov/query-progress/query-progress",
+    "page/weigov/query-progress-result/query-progress-result",
+    "page/weigov/my-order/my-order",
+    "page/weigov/my-apply/my-apply",
+    "page/weigov/my-talk/my-talk",
+    "page/weigov/my-talk-detail/my-talk-detail",
+    "page/weigov/my-collect/my-collect",
+
+    "page/weigov/login/login",
+    "page/weigov/reg/reg"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#00a9e9",
+    "backgroundColor": "#fbf9fe"
+  },
+    "tabBar": {
+        "color": "#757575",
+        "selectedColor": "#00a9e9",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "text": "个人办事",
+                "pagePath": "page/weigov/item-list/item-list",
+                "iconPath": "image/nav/person.png",
+                "selectedIconPath": "image/nav/person-hover.png"
+            },
+            {
+                "text": "企业办事",
+                "pagePath": "page/weigov/company/company",
+                "iconPath": "image/nav/company.png",
+                "selectedIconPath": "image/nav/company-hover.png"
+            },
+            {
+                "text": "服务网点",
+                "pagePath": "page/weigov/network/network",
+                "iconPath": "image/nav/network.png",
+                "selectedIconPath": "image/nav/network-hover.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "page/weigov/mine/mine",
+                "iconPath": "image/nav/mine.png",
+                "selectedIconPath": "image/nav/mine-hover.png"
+            }
+        ]
+    },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
+

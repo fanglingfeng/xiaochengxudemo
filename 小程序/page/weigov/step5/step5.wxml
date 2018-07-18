@@ -1,0 +1,122 @@
+<import src="../../../common/dialogs.wxml"></import>
+<template is="dialogs" data="{{...dialogs}}"/>
+<view class="page">
+
+    <section class="bg-white hd-rout">
+        <span bindtap="toBaseInfo" class="text text-gray">
+            <span class="top-ic icon-info-gray " wx:if="{{stateBaseInfo!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateBaseInfo==1}}"></span>
+            <span class="rout-circle">1</span>
+            基本表单</span>
+        <span bindtap="toStep4" class="text  text-gray">
+            <span class="top-ic icon-info-gray " wx:if="{{stateStep4!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateStep4==1}}"></span>
+            <span class="rout-circle" >2</span>
+            上传资料</span>
+        <span  class="text  hover">
+            <span class="top-ic icon-info-gray " wx:if="{{stateStep5!=1}}"></span>
+            <span class="top-ic text-green ion-checkmark-circled" wx:if="{{stateStep5==1}}"></span>
+            <span class="rout-circle" >3</span>
+            领取证照</span>
+    </section>
+
+
+    <section class="scroll-content has-footer blue-radio mgt-20">
+
+        <section wx:if="{{scopeData == null}}" class="text-center text-title pdt-50 pdb-50">
+            请到政务服务中心现场领取证照!
+        </section>
+
+        <section wx:if="{{scopeData != null}}">
+            <div class="text-blue pd-20 bg-white ft-s-12 ">
+                办理模式:
+                <span wx:if="{{scopeData.BLMS == null}}">暂无</span>
+                <span wx:if="{{scopeData.BLMS != null}}">{{blmsData[scopeData.BLMS]}}</span>
+            </div>
+
+            <section class="bg-white pdb-20 ">
+                <view class="list-hd weui-cells__title mgt-20">
+                    <span class="hd-name">递交材料方式</span>
+                </view>
+                <div class="weui-cells weui-cells_checkbox box-bd mgt-5">
+                    <div class="weui-cell weui-cell_access no-hover">
+                        <div class="weui-cell__bd pdt-10">
+                            <label wx:for="{{scopeDataDJZZCL}}" bindtap="sendDJZZCL" data-id="{{item}}" class=" weui-check__label" for="s1{{item}}">
+                                <input type="radio" class="weui-check" name="checkbox1" id="s1{{item}}" checked="{{item == DJZZCLchecked}}" />
+                                <radio checked="{{item == DJZZCLchecked}}"/>{{DJZZCLData[item]}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_access" wx:if="{{networkDetail != null}}">
+                        <div class="weui-cell__bd text-gray ft-s-8" >
+                            <p>网点名称:{{networkDetail.NETWORKNAME}}</p>
+                            <p>网点地址:{{networkDetail.NETWORKADDRESS}}</p>
+                            <p>网点电话:{{networkDetail.NETWORKPHONE}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="bg-white pdb-20 has-footer">
+                <view class="list-hd weui-cells__title mgt-20">
+                    <span class="hd-name">领取证照方式</span>
+                </view>
+                <div class="weui-cells weui-cells_checkbox box-bd mgt-5">
+                    <div class="weui-cell weui-cell_access no-hover">
+                        <div class="weui-cell__bd pdt-10">
+                            <label wx:for="{{scopeDataLQSPJG}}" bindtap="lingqu" data-id="{{item}}" class=" weui-check__label mgr-20" for="s2{{item}}">
+                                <input type="radio" class="weui-check" name="checkbox2" id="s2{{item}}" checked="{{item == LQSPJGchecked}}" />
+                                <radio checked="{{item == LQSPJGchecked}}"/>{{LQSPJGData[item]}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_access" wx:if="{{LQSPJGchecked==1}}">
+                        <div class="weui-cell__bd text-gray ft-s-8">
+                            <p>承诺办理时限：{{itemInfo.ITEMLIMITTIME}}个工作日，具体结果以短信通知为主。</p>
+                            <div  wx:if="{{networkDetail != null}}">
+                                <p>网点名称:{{networkDetail.NETWORKNAME}}</p>
+                                <p>网点地址:{{networkDetail.NETWORKADDRESS}}</p>
+                                <p>网点电话:{{networkDetail.NETWORKPHONE}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_access" wx:if="{{LQSPJGchecked==2 && userPostInfo != null}}" bindtap="addAddress" data-id="{{userPostInfo['POSTID']}}">
+                        <div class="weui-cell__bd text-gray ft-s-8">
+                            <p>收件人: {{userPostInfo.RECEIVE}} <span class="pull-right">{{userPostInfo.MOBILE}}</span></p>
+                            <p>收货地址: {{userPostInfo.ADDRESS}}</p>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </div>
+                    <div class="weui-cell weui-cell_access" wx:if="{{LQSPJGchecked==2 && userPostInfo == null}}">
+                        <div class="weui-cell__bd text-gray ft-s-8">
+                            <p bindtap="addAddress" class="text-red text-center">邮寄地址为空，请新增邮寄地址>></p>
+                        </div>
+                        <div class="weui-cell__ft"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="pd-40"></section>
+
+        </section>
+
+
+        <div class="footer-fixed pd-40">
+            <p class="bg-white text-waring">注：带*号的都为必填内容</p>
+            <div class="foot-actions">
+                <a bindtap="toStep4" class="action weui-btn weui-btn_primary ">上一步</a>
+                <a bindtap="tempStore" class="action weui-btn weui-btn_primary ">暂存</a>
+                <a bindtap="submit" class="action weui-btn weui-btn_primary bg-blue text-white">申报</a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        {{loadingText}}
+    </loading>
+
+</view>

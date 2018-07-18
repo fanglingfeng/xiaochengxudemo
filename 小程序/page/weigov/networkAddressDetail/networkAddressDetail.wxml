@@ -1,0 +1,61 @@
+<view class="page link-list">
+
+    <!--<navigator url="../map/map?id={{data.NETWORKID}}">-->
+    <view class="list-hd bg-white flex">
+        <span ng-bind="data.NETWORKNAME"><text>{{data.NETWORKNAME}}</text></span>
+    <span class="pull-right text-blue text-right" style="width:4em;" ng-click="goMap(data.NETWORKID)">
+        <!--<i class="big-icon"><i class="ion-ios-location-outline text-blue"></i></i>路线-->
+    </span>
+    </view>
+    <!--</navigator>-->
+
+    <view class="list-hd">
+        <i class="big-icon"><i class="ion-ios-telephone"><image class="icon-img" src="/image/network/tj_icon_rxdh.png"></image></i></i>咨询电话
+    </view>
+    <p class="pd-40 bg-white text-blue" ng-bind="data.NETWORKPHONE">{{data.NETWORKPHONE}}</p>
+
+
+    <view class="list-hd">
+        <i class="big-icon"><i class="ion-ios-location mgr-10"><image class="icon-img" src="/image/network/tj_icon_zxkf.png"></image></i></i>办事地址
+    </view>
+    <p class="pd-40 bg-white text-gray" ng-bind="data.NETWORKADDRESS">{{data.NETWORKADDRESS}}</p>
+
+
+
+    <view class="list-hd">
+        <i class="big-icon"><i class="ion-ios-clock mgr-10"><image class="icon-img" src="/image/network/tj_icon_wysb.png"></image></i></i>服务时间
+    </view>
+    <div class="pd-40 bg-white text-gray" ng-bind-html="data.OFFICEHOURS">
+        {{data.OFFICEHOURS}}
+    </div>
+
+
+    <view class="list-hd">
+        <i class="big-icon"><i class="ion-android-list mgr-10"><image class="icon-img" src="/image/network/tj_icon_wyyy.png"></image></i></i>服务事项
+    </view>
+
+    <div class="weui-cells my-talk-list" ng-click="goDepartment(data)">
+        <navigator open-type="redirect" class="weui-cell weui-cell_access" url="../department/department?networkType={{networkType}}">
+            <div class="weui-cell__bd">
+                <p class="text-gray">服务中心可办理<span class="text-blue" ng-bind="data.PERMNUM">{{data.PERMNUM}}</span>项服务 </p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </navigator>
+    </div>
+
+
+    <view class="list-hd">
+        <i class="big-icon"><i class="ion-android-bus mgr-10"><image class="icon-img" src="/image/network/tj_icon_bszn.png"></image></i></i>交通信息
+    </view>
+    <p class="pd-40 bg-white text-gray" ng-bind-html="data.TRAFFIC">{{data.TRAFFIC}}</p>
+
+
+    <modal class="modal" hidden="{{!isShowError}}" no-cancel bindconfirm="hideShowError" bindcancel="hideShowError">
+        <view> 未加载到数据,请稍后重试 </view>
+    </modal>
+
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
+
