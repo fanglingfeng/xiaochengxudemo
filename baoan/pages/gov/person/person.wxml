@@ -5,29 +5,32 @@
       <div class='pull-left pdl-10'>
         <span class='v-centeral icon-search'></span>
       </div>
-      <div class='pull-left pdl-10' >
-        <span class='v-centeral' >
-          <text class='textcenter' >搜索</text>
+      <div class='pull-left pdl-10'>
+        <span class='v-centeral'>
+          <text class='textcenter'>搜索</text>
         </span>
       </div>
-     
+
 
     </div>
 
 
 
   </form>
- <div class='bg-white mgt-20'>
-          <ul class='tab-hd  clearfix'>
-              <view hidden='{{!isTheme}}'>
-                <li class='hover'>按主题分类</li>
-                <li >按部门分类</li>
-              </view>
-          
-          </ul>
-      
-      
-      </div>
+  <div class='bg-white mgt-20'>
+    <ul class='tab-hd  clearfix'>
+      <view hidden='{{!isTheme}}'>
+        <li class='hover' bindtap='showTheme'>按主题分类</li>
+        <li bindtap='showDepartment'>按部门分类</li>
+      </view>
+      <view hidden='{{isTheme}}' bindtap='showTheme'>
+        <li>按主题分类</li>
+        <li class='hover' bindtap='showDepartment'>按部门分类</li>
+      </view>
+    </ul>
+
+
+  </div>
 
 
 </view>

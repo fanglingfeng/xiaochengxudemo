@@ -7,7 +7,13 @@ Page({
   data: {
       isTheme:true
   },
-
+  showTheme:function(){
+    this.setData({isTheme:true});
+    
+  },
+  showDepartment:function(){
+    this.setData({isTheme:false});
+  },
   /**
    * 生命周期函数--监听页面加载
    */

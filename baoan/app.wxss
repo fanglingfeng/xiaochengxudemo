@@ -43,8 +43,8 @@
 }
 .tab-hd li.hover{
   color: #00a9e9;
-  border-bottom: 3px;
-  solid:#00a9e9;
+  border-bottom: 3px solid #00a9e9;
+  
 
 
 }
