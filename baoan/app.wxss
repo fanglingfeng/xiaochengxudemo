@@ -21,9 +21,32 @@
 .pdl-10 {
   padding-left: 10px;
 }
+.mgt-20{
+  margin-top: 20px;
 
+}
 .bg-white {
   background: white !important;
+}
+/*tablanmu*/
+.tab-hd{
+  list-style: none
+}
+.tab-hd li{
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1em;
+    line-height: 1.2;
+
+}
+.tab-hd li.hover{
+  color: #00a9e9;
+  border-bottom: 3px;
+  solid:#00a9e9;
+
+
 }
 
 .v-centeral {

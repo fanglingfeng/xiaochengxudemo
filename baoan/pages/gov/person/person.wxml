@@ -10,14 +10,24 @@
           <text class='textcenter' >搜索</text>
         </span>
       </div>
-
+     
 
     </div>
 
 
 
   </form>
-
+ <div class='bg-white mgt-20'>
+          <ul class='tab-hd  clearfix'>
+              <view hidden='{{!isTheme}}'>
+                <li class='hover'>按主题分类</li>
+                <li >按部门分类</li>
+              </view>
+          
+          </ul>
+      
+      
+      </div>
 
 
 </view>
