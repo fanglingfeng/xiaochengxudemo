@@ -44,10 +44,32 @@
 .tab-hd li.hover{
   color: #00a9e9;
   border-bottom: 3px solid #00a9e9;
-  
+}
+.theme-wrap .nav-type{
+    float: left;
+    border: 1px solid #dcdcdc;
+    width: 50%;
+    border-width: 0 1px 1px 0;
+    display: flex;
+    align-items: center;
+    padding: 12px 5px
+}
+.theme-wrap .nav-type .i{
+display: block;
+width: 30%;
+height: 22px;
+float: left;
+text-align: right;
+margin-right: 15px
 
 
 }
+.theme-wrap.v-centeral .i image{
+  width: 22px;
+  height: 22px
+}
+
+
 
 .v-centeral {
   position: absolute;

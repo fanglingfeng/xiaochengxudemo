@@ -28,6 +28,37 @@
         <li class='hover' bindtap='showDepartment'>按部门分类</li>
       </view>
     </ul>
+    <view class='theme-wrap' hidden='{{!isTheme}}'>
+      <block wx:for-items='{{dataTheme}}'>
+        <navigator class='nav-type'>
+          <view class='i'>
+
+            <image src='{{item.PICTUREPATH}}'>
+            </image>
+
+          </view>
+          <view>
+            <view>{{item.PICTURENAME}}</view>
+            <view>{{item.PERMCODE}}</view>
+
+
+
+          </view>
+
+
+
+
+        </navigator>
+
+
+
+
+      </block>
+
+
+
+    </view>
+
 
 
   </div>
